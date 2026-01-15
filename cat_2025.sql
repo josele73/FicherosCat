@@ -101,6 +101,12 @@ COPY cat11_fincas(delegacion, municipio_dgc, ref_catastral, provincia, municipio
                   coor_x, coor_y, epsg)
 FROM 'C:\\a\\OMISOR2025\\CAT\\CAT11_fincas.csv' DELIMITER ',' CSV HEADER ENCODING 'UTF8';
 
+--Ajustar cooordenadas
+UPDATE cat11_fincas
+SET
+    coor_x = coor_x / 100,
+    coor_y = coor_y / 100;
+
 -- Crear geometría
 UPDATE cat11_fincas
 SET geom = ST_SetSRID(ST_MakePoint(coor_x, coor_y), 25830);
@@ -111,6 +117,7 @@ COPY cat14_const FROM 'C:\\a\\OMISOR2025\\CAT\\CAT14_const.csv' DELIMITER ',' CS
 COPY cat15_inmuebles FROM 'C:\\a\\OMISOR2025\\CAT\\CAT15_inmuebles.csv' DELIMITER ',' CSV HEADER ENCODING 'UTF8';
 COPY cat16_reparto FROM 'C:\\a\\OMISOR2025\\CAT\\CAT16_reparto.csv' DELIMITER ',' CSV HEADER ENCODING 'UTF8';
 COPY cat17_cultivos FROM 'C:\\a\\OMISOR2025\\CAT\\CAT17_cultivos.csv' DELIMITER ',' CSV HEADER ENCODING 'UTF8';
+
 
 
 
