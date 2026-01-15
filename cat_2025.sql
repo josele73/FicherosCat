@@ -98,7 +98,7 @@ CREATE TABLE cat17_cultivos (
 -- CAT11
 COPY cat11_fincas(delegacion, municipio_dgc, ref_catastral, provincia, municipio, via, num_pol,
                   superficie_finca, sup_const_total, sup_const_sobre, sup_const_bajo,
-                  coor_x, coor_y, epsg)
+                  coor_y, coor_x, epsg)
 FROM 'C:\\a\\OMISOR2025\\CAT\\CAT11_fincas.csv' DELIMITER ',' CSV HEADER ENCODING 'UTF8';
 
 -- Crear geometría
@@ -111,4 +111,5 @@ COPY cat14_const FROM 'C:\\a\\OMISOR2025\\CAT\\CAT14_const.csv' DELIMITER ',' CS
 COPY cat15_inmuebles FROM 'C:\\a\\OMISOR2025\\CAT\\CAT15_inmuebles.csv' DELIMITER ',' CSV HEADER ENCODING 'UTF8';
 COPY cat16_reparto FROM 'C:\\a\\OMISOR2025\\CAT\\CAT16_reparto.csv' DELIMITER ',' CSV HEADER ENCODING 'UTF8';
 COPY cat17_cultivos FROM 'C:\\a\\OMISOR2025\\CAT\\CAT17_cultivos.csv' DELIMITER ',' CSV HEADER ENCODING 'UTF8';
+
 
